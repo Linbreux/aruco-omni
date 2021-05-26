@@ -8,23 +8,29 @@ Lijn::Lijn(){
     Lijn::p1 = Point2f(NULL,NULL);
     Lijn::p2 = Point2f(NULL,NULL);
 }
+
+// Lijnobject met 2 punten (waartussen een lijn wordt getrokken)
 Lijn::Lijn(Point2f p1, Point2f p2){
     Lijn::p1 = p1;
      Lijn::p2 = p2;
 }
 
+// krijg we waarden van de punten die in het lijnobject zitten terug
 void Lijn::getLijn(Point2f *p1, Point2f *p2){
         *p1 = Lijn::p1;
         *p2 = Lijn::p2;
 }
 
+// krijg punt 1 terug
 Point2f Lijn::getP1(){
         return p1;
     }
 
+// krijg punt 2 terug
 Point2f Lijn::getP2(){
     return p2;
 }
+
 
 float Lijn::getLengte(){
     return abs(sqrt(pow(p2.x - p1.x,2)+pow(p2.y-p1.y,2)));
@@ -63,6 +69,7 @@ bool Lijn::isEmpty(){
     return false;
 }
 
+// kirjg hoek van de lijn terug ten opzichte van de x-as. Bool megeven, indien true: hoek in radialen teruggegeven.
 float Lijn::getHoekTovXAs(bool rad){
     float x,y;
     x = p2.x-p1.x;
